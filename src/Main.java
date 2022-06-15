@@ -11,8 +11,8 @@ public class Main {
         Epic task4 = new Epic ("Эпик1", " Подготовка к празднику 1", TaskStatus.NEW);
 
         SubTask task5 = new SubTask (" Подзадача", " составить список продуктов", TaskStatus.NEW,3);
-        SubTask task6 = new SubTask (" Подзадача 1", " составить список продуктов 1", TaskStatus.NEW,3);
-        SubTask task7 = new SubTask (" Подзадача 2", " составить список продуктов 2", TaskStatus.NEW,4);
+        SubTask task6 = new SubTask (" Подзадача 1", " составить список продуктов 1", TaskStatus.DONE,3);
+        SubTask task7 = new SubTask (" Подзадача 2", " составить список продуктов 2", TaskStatus.DONE,4);
 
         taskManager.addTask(task0);
         taskManager.addTask(task1);
@@ -28,6 +28,21 @@ public class Main {
         taskManager.printOllTasks();
         taskManager.printOllEpics();
         taskManager.printOllSubTasks();
+
+        //получили по номеру все типы задач
+        System.out.println(taskManager.getTask(0));
+        System.out.println(taskManager.getSubTask(5));
+        System.out.println(taskManager.getEpic(3));
+
+        //обновили задачу статус задачи поменялся на DONE
+        taskManager.changeStatusOfTask(task0);
+        System.out.println(taskManager.getTask(0));
+
+        // статус эпика меняется в зависимости от статуса подзадач
+        taskManager.changeStatusOfEpic(3);
+        System.out.println(taskManager.getEpic(3));
+
+
     }
 
 
