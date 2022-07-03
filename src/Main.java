@@ -2,8 +2,9 @@ public class Main {
     public static void main(String[] args) {
 
         TaskManager taskManager = new InMemoryTaskManager();
+        InMemoryHistoryManager inMemoryHistoryManager = new InMemoryHistoryManager();
         // Создаем задачи всех типов
-        Task task0 = new Task("Задача", "просто задача", TaskStatus.NEW);
+        Task task0 = new Task("Задача", "просто первая  задача в память", TaskStatus.NEW);
         Task task1 = new Task("Задача1", "просто задача1", TaskStatus.NEW);
         Task task2 = new Task("Задача2", "просто задача2", TaskStatus.NEW);
 
@@ -16,6 +17,7 @@ public class Main {
         SubTask task18 = new SubTask(" Подзадача 3", " составить список продуктов 3", TaskStatus.DONE, 4);
         SubTask task19 = new SubTask(" Подзадача 4", " составить список продуктов 4", TaskStatus.DONE, 4);
         taskManager.addTask(task0);
+
         taskManager.addTask(task1);
         taskManager.addTask(task2);
 
@@ -29,22 +31,28 @@ public class Main {
         taskManager.addSubTask(task19);
         // Получили списки задач всех типов
         taskManager.printOllTasks();
+
         taskManager.printOllEpics();
         taskManager.printOllSubTasks();
 
         //получили по номеру все типы задач
-        System.out.println(taskManager.getTask(0));
+        taskManager.getTask(0);
+        taskManager.getTask(1);
+        taskManager.getTask(2);
+        System.out.println(inMemoryHistoryManager. getHistory());
+
+
         System.out.println(taskManager.getSubTask(5));
         System.out.println(taskManager.getEpic(3));
 
         //обновили задачу статус задачи поменялся на DONE
         taskManager.updateStatusOfTask(task0);
-        System.out.println(taskManager.getTask(0));
+        taskManager.getTask(0);
 
         // обновили все типы задач
         Task task8 = new Task("Новая Задача", "просто новая задача задача", TaskStatus.NEW);
         taskManager.updateTask(task8);
-        System.out.println(taskManager.getTask(0));
+        taskManager.getTask(0);
 
         Epic task9 = new Epic("Новый Эпик", " Подготовка к празднику", TaskStatus.NEW);
         taskManager.apdateEpic(task9);

@@ -1,11 +1,17 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
     private int id = 0;
     private HashMap<Integer, Task> taskMap = new HashMap<>();
     private HashMap<Integer, Epic> epicMap = new HashMap<>();
     private HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
+
+   // берем список задач сохраненных в памяти
+    HistoryManager historyManager = new InMemoryHistoryManager();
+
 
     // 1 методы для создания задачи всех типов
     @Override
@@ -124,11 +130,28 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
 
+
+
     //7 методы получения всех типов задач по идентификатору.
     @Override
-    public Task getTask(int id) {
-        return taskMap.get(id);
+    public void getTask(int id) {  // Получение задачи по ID
+        if (taskMap.isEmpty()) {
+            System.out.println("В трекере задач нет задач");
+            return;
+        }
+        if (!taskMap.containsKey(id)) {
+            System.out.println("Задача с данным ID нет");
+            return;
+        }
+        Task task = taskMap.get(id);
+            System.out.println(task);
+            historyManager.addTask(task);
+
     }
+
+
+
+
     @Override
     public SubTask getSubTask(int id) {
         return subTaskMap.get(id);
