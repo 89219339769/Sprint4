@@ -47,11 +47,11 @@ public interface TaskManager {
 
 
     //7 методы получения всех типов задач по идентификатору.
-    void getTask(int id);
+    public void getTask(int id);
 
-    public SubTask getSubTask(int id);
+    public void getSubTask(int id);
 
-    public Epic getEpic(int id);
+    public void getEpic(int id);
 
     //Удаление  задач всех типов по индификатору
     public void deleteTask(int id);

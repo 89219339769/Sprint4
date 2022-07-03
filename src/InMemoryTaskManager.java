@@ -150,16 +150,42 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
 
+    @Override
+    public void getSubTask(int id) {  // Получение задачи по ID
+        if (subTaskMap.isEmpty()) {
+            System.out.println("В трекере задач нет задач");
+            return;
+        }
+        if (!subTaskMap.containsKey(id)) {
+            System.out.println("Задача с данным ID нет");
+            return;
+        }
+        SubTask subTasktask = subTaskMap.get(id);
+        System.out.println(subTasktask);
+        historyManager.addTask(subTasktask);
+
+    }
 
 
     @Override
-    public SubTask getSubTask(int id) {
-        return subTaskMap.get(id);
+    public void getEpic(int id) {  // Получение задачи по ID
+        if (epicMap.isEmpty()) {
+            System.out.println("В трекере задач нет задач");
+            return;
+        }
+        if (!epicMap.containsKey(id)) {
+            System.out.println("Задача с данным ID нет");
+            return;
+        }
+        Epic eppic = epicMap.get(id);
+        System.out.println(eppic);
+        historyManager.addTask(eppic);
+
     }
-    @Override
-    public Epic getEpic(int id) {
-        return epicMap.get(id);
-    }
+
+
+
+
 
     //Удаление  задач всех типов по индификатору
     @Override

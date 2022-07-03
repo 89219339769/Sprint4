@@ -39,11 +39,13 @@ public class Main {
         taskManager.getTask(0);
         taskManager.getTask(1);
         taskManager.getTask(2);
+
+        //проверили что разные типы задач сохраняются в списке истории
         System.out.println(inMemoryHistoryManager. getHistory());
-
-
-        System.out.println(taskManager.getSubTask(5));
-        System.out.println(taskManager.getEpic(3));
+        taskManager.getSubTask(5);
+        System.out.println(inMemoryHistoryManager. getHistory());
+        taskManager.getEpic(3);
+        System.out.println(inMemoryHistoryManager. getHistory());
 
         //обновили задачу статус задачи поменялся на DONE
         taskManager.updateStatusOfTask(task0);
@@ -56,11 +58,11 @@ public class Main {
 
         Epic task9 = new Epic("Новый Эпик", " Подготовка к празднику", TaskStatus.NEW);
         taskManager.apdateEpic(task9);
-        System.out.println(taskManager.getEpic(0));
+        taskManager.getEpic(0);
 
         SubTask task10 = new SubTask("Новая подзадача", " новая Подготовка к празднику", TaskStatus.DONE, 3);
         taskManager.updateSubTask(task10);
-        System.out.println(taskManager.getSubTask(0));
+        taskManager.getSubTask(0);
 
 
         // статус эпика меняется в зависимости от статуса подзадач
