@@ -13,4 +13,5 @@ int epicId;
     public void setEpicId(int epicId) {
         this.epicId = epicId;
     }
+
 }

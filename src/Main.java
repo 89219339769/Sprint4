@@ -1,29 +1,32 @@
 public class Main {
     public static void main(String[] args) {
 
-        TaskManager taskManager = new TaskManager();
+        TaskManager taskManager = new InMemoryTaskManager();
         // Создаем задачи всех типов
-        Task task0 = new Task("Задача","просто задача", TaskStatus.NEW);
-        Task task1 = new Task("Задача1","просто задача1", TaskStatus.NEW);
-        Task task2 = new Task("Задача2","просто задача2", TaskStatus.NEW);
+        Task task0 = new Task("Задача", "просто задача", TaskStatus.NEW);
+        Task task1 = new Task("Задача1", "просто задача1", TaskStatus.NEW);
+        Task task2 = new Task("Задача2", "просто задача2", TaskStatus.NEW);
 
-        Epic task3 = new Epic ("Эпик", " Подготовка к празднику", TaskStatus.NEW);
-        Epic task4 = new Epic ("Эпик1", " Подготовка к празднику 1", TaskStatus.NEW);
+        Epic task3 = new Epic("Эпик", " Подготовка к празднику", TaskStatus.NEW);
+        Epic task4 = new Epic("Эпик1", " Подготовка к празднику 1", TaskStatus.NEW);
 
-        SubTask task5 = new SubTask (" Подзадача", " составить список продуктов", TaskStatus.NEW,3);
-        SubTask task6 = new SubTask (" Подзадача 1", " составить список продуктов 1", TaskStatus.DONE,3);
-        SubTask task7 = new SubTask (" Подзадача 2", " составить список продуктов 2", TaskStatus.DONE,4);
-
+        SubTask task5 = new SubTask(" Подзадача", " составить список продуктов", TaskStatus.DONE, 78);
+        SubTask task6 = new SubTask(" Подзадача 1", " составить список продуктов 1", TaskStatus.NEW, 3);
+        SubTask task7 = new SubTask(" Подзадача 2", " составить список продуктов 2", TaskStatus.DONE, 4);
+        SubTask task18 = new SubTask(" Подзадача 3", " составить список продуктов 3", TaskStatus.DONE, 4);
+        SubTask task19 = new SubTask(" Подзадача 4", " составить список продуктов 4", TaskStatus.DONE, 4);
         taskManager.addTask(task0);
         taskManager.addTask(task1);
         taskManager.addTask(task2);
 
-        taskManager.addEpic( task3);
-        taskManager.addEpic( task4);
+        taskManager.addEpic(task3);
+        taskManager.addEpic(task4);
 
-        taskManager. addSubTask( task5);
-        taskManager. addSubTask( task6);
-        taskManager. addSubTask( task7);
+        taskManager.addSubTask(task5);
+        taskManager.addSubTask(task6);
+        taskManager.addSubTask(task7);
+        taskManager.addSubTask(task18);
+        taskManager.addSubTask(task19);
         // Получили списки задач всех типов
         taskManager.printOllTasks();
         taskManager.printOllEpics();
@@ -35,15 +38,29 @@ public class Main {
         System.out.println(taskManager.getEpic(3));
 
         //обновили задачу статус задачи поменялся на DONE
-        taskManager.changeStatusOfTask(task0);
+        taskManager.updateStatusOfTask(task0);
         System.out.println(taskManager.getTask(0));
 
+        // обновили все типы задач
+        Task task8 = new Task("Новая Задача", "просто новая задача задача", TaskStatus.NEW);
+        taskManager.updateTask(task8);
+        System.out.println(taskManager.getTask(0));
+
+        Epic task9 = new Epic("Новый Эпик", " Подготовка к празднику", TaskStatus.NEW);
+        taskManager.apdateEpic(task9);
+        System.out.println(taskManager.getEpic(0));
+
+        SubTask task10 = new SubTask("Новая подзадача", " новая Подготовка к празднику", TaskStatus.DONE, 3);
+        taskManager.updateSubTask(task10);
+        System.out.println(taskManager.getSubTask(0));
+
+
         // статус эпика меняется в зависимости от статуса подзадач
-        taskManager.changeStatusOfEpic(3);
-        System.out.println(taskManager.getEpic(3));
-
-
+        taskManager.deleteSubTask(6);
+        taskManager.printOllSubTasks();
+        taskManager.printOllEpics();
+        // удалили эпик по номеру
+        taskManager.deleteEpic(3);
+        taskManager.printOllEpics();
     }
-
-
 }
