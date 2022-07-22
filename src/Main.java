@@ -1,3 +1,11 @@
+import Manager.InMemoryHistoryManager;
+import Manager.TaskManager;
+import Tasks.Epic;
+import Tasks.SubTask;
+import Tasks.Task;
+import Tasks.TaskStatus;
+import Manager.InMemoryTaskManager;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -35,12 +43,10 @@ public class Main {
         taskManager.printOllEpics();
         taskManager.printOllSubTasks();
 
-        //получили по номеру все типы задач
+        //проверили что разные типы задач сохраняются в списке истории
         taskManager.getTask(0);
         taskManager.getTask(1);
         taskManager.getTask(2);
-
-        //проверили что разные типы задач сохраняются в списке истории
         System.out.println(inMemoryHistoryManager. getHistory());
         taskManager.getSubTask(5);
         System.out.println(inMemoryHistoryManager. getHistory());

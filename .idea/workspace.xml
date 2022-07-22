@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a348257-35a9-4602-b5f6-b8cbb93e332d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Manager/Managers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/Epic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/HistoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/InMemoryHistoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/InMemoryTaskManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/Managers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/SubTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/TaskManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanbanCorrected2/TaskStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Epic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/HistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InMemoryHistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/InMemoryHistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/SubTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasks/TaskStatus.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CGL5PSSrMXzzqkNQPEkMYLyb8a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Sprint4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a348257-35a9-4602-b5f6-b8cbb93e332d" name="Changes" comment="" />
+      <created>1658423790209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658423790209</updated>
+    </task>
+    <servers />
+  </component>
+</project>

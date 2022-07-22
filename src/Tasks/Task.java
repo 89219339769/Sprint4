@@ -1,3 +1,6 @@
+package Tasks;
+
+
 public class Task {
 
         private String title;  // Наименование задачи

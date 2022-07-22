@@ -1,10 +1,14 @@
+package Manager;
+
+import Tasks.Task;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    public static Collection<Task>tasks = new ArrayList<>();
-
+    public static List<Task>tasks = new ArrayList<>();
+    static final int MAX_VALUE = 10;
 
 
     //добавляем задачу в список просмотров
@@ -12,13 +16,12 @@ public class InMemoryHistoryManager implements HistoryManager {
     public void addTask(Task task) {
 
         tasks.add(task);
-        if(tasks.size() > 10){
-            tasks.remove(0);
-        }
+
+
     }
 
     @Override
-    public Collection<Task>  getHistory() {
+    public List<Task> getHistory() {
         return tasks;
     }
 

@@ -1,16 +1,17 @@
+package Manager;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import Tasks.Epic;
+import Tasks.SubTask;
+import Tasks.Task;
+
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
 public interface TaskManager {
-    int id = 0;
-    HashMap<Integer, Task> taskMap = new HashMap<>();
-    HashMap<Integer, Epic> epicMap = new HashMap<>();
-    HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
 
-
+    Map<Integer, Task> taskMap = new HashMap<>();
+    Map<Integer, Epic> epicMap = new HashMap<>();
+    Map<Integer, SubTask> subTaskMap = new HashMap<>();
 
 
     public void addTask(Task task);
@@ -43,7 +44,6 @@ public interface TaskManager {
     public void deleteTasks();
 
     public void deleteSubTasks();
-
 
 
     //7 методы получения всех типов задач по идентификатору.

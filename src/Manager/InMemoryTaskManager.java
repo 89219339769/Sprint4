@@ -1,13 +1,16 @@
+package Manager;
+
+import Tasks.Epic;
+import Tasks.SubTask;
+import Tasks.Task;
+import Tasks.TaskStatus;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
     private int id = 0;
-    private HashMap<Integer, Task> taskMap = new HashMap<>();
-    private HashMap<Integer, Epic> epicMap = new HashMap<>();
-    private HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
+
 
    // берем список задач сохраненных в памяти
     HistoryManager historyManager = new InMemoryHistoryManager();
@@ -94,7 +97,7 @@ public class InMemoryTaskManager implements TaskManager {
             }
             if ((a != 0) && (a == subTasksOfEpic.size())) {
                 epic.setStatus(TaskStatus.NEW);
-            } else if ((b != 0) && (b == subTasksOfEpic.size())) {
+            } else if (b != 0 && b == subTasksOfEpic.size()) {
                 epic.setStatus(TaskStatus.DONE);
             } else {
                 epic.setStatus(TaskStatus.IN_PROGRESS);
@@ -108,20 +111,21 @@ public class InMemoryTaskManager implements TaskManager {
     public void updateTask(Task task) {
         taskMap.put(task.getId(), task);
     }
-
+    @Override
     public void updateSubTask(SubTask subTask) {
         subTaskMap.put(subTask.getId(), subTask);
     }
-
+    @Override
     public void apdateEpic(Epic epic) {
         epicMap.put(epic.getId(), epic);
     }
 
     // 6 Удаление всех задач.
+    @Override
     public void deleteTasks() {
         taskMap.clear();
     }
-
+    @Override
     public void deleteSubTasks() {
         for (Epic epic : epicMap.values()) {
             epic.clearSubTask();
@@ -140,7 +144,7 @@ public class InMemoryTaskManager implements TaskManager {
             return;
         }
         if (!taskMap.containsKey(id)) {
-            System.out.println("Задача с данным ID нет");
+            System.out.println("Задачи с данным ID нет");
             return;
         }
         Task task = taskMap.get(id);
@@ -157,7 +161,7 @@ public class InMemoryTaskManager implements TaskManager {
             return;
         }
         if (!subTaskMap.containsKey(id)) {
-            System.out.println("Задача с данным ID нет");
+            System.out.println("Задачи с данным ID нет");
             return;
         }
         SubTask subTasktask = subTaskMap.get(id);
@@ -174,7 +178,7 @@ public class InMemoryTaskManager implements TaskManager {
             return;
         }
         if (!epicMap.containsKey(id)) {
-            System.out.println("Задача с данным ID нет");
+            System.out.println("Задачи с данным ID нет");
             return;
         }
         Epic eppic = epicMap.get(id);
